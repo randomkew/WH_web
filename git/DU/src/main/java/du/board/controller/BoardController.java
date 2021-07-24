@@ -21,12 +21,17 @@ import du.board.domain.BoardVO;
 import du.board.service.BoardService;
 import du.common.DownloadView;
 import du.common.Pagination;
+import du.reply.domain.ReplyVO;
+import du.reply.service.ReplyService;
 
 @Controller
 public class BoardController {
 
 	@Autowired
 	private BoardService boardService;
+	
+	@Autowired
+	private ReplyService replyService;
 	
 	@RequestMapping("/boardListPage.do")
 	public ModelAndView boardListPage(
@@ -66,8 +71,11 @@ public class BoardController {
 		ModelAndView mav = new ModelAndView("board/boardInfo.jsp");
 		
 		BoardVO board = boardService.selectBoard(idx);
-		
 		mav.addObject("board", board);
+		
+		
+		List<ReplyVO> replyList = replyService.selectReplyList(idx);
+		mav.addObject("replyList",replyList);
 		return mav;
 	}
 	
