@@ -2,11 +2,16 @@
 
 header {
 	display: flex;
-    justify-content: space-between;
     border-bottom: 1px solid #72c524;
     margin-bottom: 10px;
 }
-
+.hd_wrap{
+		width:100%;
+		border_bottom: 1px solid #ececec;
+		line_height:32px;
+		}
+.hd_wrap:first-child{height:36px;}
+.hd_wrap:nth-child(2){height:60px;}
 .userInfoDiv {
 	text-align: right;
 	font-size: 19px;
@@ -24,6 +29,7 @@ header {
 
 .infoUl {
 	margin: auto 0;
+	float:right;
 }
 
 .infoUl > li > a {

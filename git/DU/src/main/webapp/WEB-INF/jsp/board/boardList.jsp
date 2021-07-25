@@ -22,7 +22,7 @@
 			</tr>
 		</table>
 		<button type="button" class="btn btn-success"
-			onclick="window.location.href='boardWritePage.do'">게시글 등록</button>
+			onclick="window.location.href='boardWritePage.do'">예약하기</button>
 	</div>
 	
 	<table id="dataList" class="table table-stiped table-hover">
