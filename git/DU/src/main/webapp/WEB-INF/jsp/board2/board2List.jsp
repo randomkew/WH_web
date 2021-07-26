@@ -22,7 +22,7 @@
 			</tr>
 		</table>
 		<button type="button" class="btn btn-success"
-			onclick="window.location.href='boardWritePage.do'">예약하기</button>
+			onclick="window.location.href='board2WritePage.do'">예약하기</button>
 	</div>
 	
 	<table id="dataList" class="table table-stiped table-hover">
@@ -89,7 +89,7 @@
 // 					item.style.display = "none";
 // 				}
 // 			}
-			var url = "boardListPage.do";
+			var url = "board2ListPage.do";
 			url = url + "?title=" + searchTitle.value;
 			
 			location.href = url;
@@ -101,7 +101,7 @@
 		var page = ((range - 2) * rangeSize) +1;
 		var range = range - 1;
 		
-		var url = "boardListPage.do";
+		var url = "board2ListPage.do";
 		url = url + "?page=" + page;
 		url = url + "&range=" + range;
 		url = url + "&title=" + searchTitle.value;
@@ -111,7 +111,7 @@
 	
 	//페이지 번호 클릭 이벤트
 	function fn_pagination(page, range, rangeSize){
-		var url = "boardListPage.do";
+		var url = "board2ListPage.do";
 		url = url + "?page=" + page;
 		url = url + "&range=" + range;
 		url = url + "&title=" + searchTitle.value;
@@ -124,7 +124,7 @@
 		var page = parseInt((range * rangeSize)) + 1;
 		var range = parseInt(range) + 1;
 		
-		var url = "boardListPage.do";
+		var url = "board2ListPage.do";
 		url = url + "?page=" + page;
 		url = url + "&range=" + range;
 		url = url + "&title=" + searchTitle.value;
@@ -132,7 +132,7 @@
 		location.href = url;
 	}
 	function trDblClick(idx){
-		var url = "boardInfoPage/"+idx+".do"
+		var url = "board2InfoPage/"+idx+".do"
 		
 		location.href = url;
 	}

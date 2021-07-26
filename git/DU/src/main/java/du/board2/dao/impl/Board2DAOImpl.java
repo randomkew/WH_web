@@ -18,13 +18,19 @@ public class Board2DAOImpl extends EgovAbstractMapper implements Board2DAO {
 //		return selectList("Board2.selectBoard2List", map);
 //	}
 	@Override
-	public List<Board2VO> selectBoard2List(Pagination pagination) {
-		return selectList("Board2.selectBoard2List", pagination);
+	public List<Board2VO> selectBoard2List(HashMap<String, Object> map) {
+		return selectList("Board2.selectBoard2List", map);
 	}
 
 	@Override
-	public int selectBoard2ListCnt() {
-		return selectOne("Board2.selectBoard2ListCnt");
+	public int selectBoard2ListCnt(String title) {
+		return selectOne("Board2.selectBoard2ListCnt",title);
+	}
+
+	@Override
+	public void insertBoard2(Board2VO board2) {
+		insert("Board2.insertBoard2", board2);
+		
 	}
 
 	

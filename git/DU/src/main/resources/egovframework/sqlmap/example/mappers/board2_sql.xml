@@ -19,6 +19,13 @@
 				B.*, U.name AS writer_name
 			FROM 
 				tb_board2 B INNER JOIN tb_user U ON B.writer_id = U.user_id
+		]]>
+			<where>
+				<if test="title != ''">
+					B.title LIKE CONCAT('%', #{title}, '%')
+				</if>
+			</where>
+		<![CDATA[
 			ORDER BY B.idx DESC
 			LIMIT #{startList}, #{listSize}
 		]]>
@@ -30,7 +37,20 @@
 			FROM
 				tb_board2
 		]]>
+		<where>
+			<if test="value != ''">
+				title LIKE CONCAT('%', #{title}, '%')
+			</if>
+		</where>
 	</select>
+	<insert id="insertBoard2" parameterType="board2Map">
+		<![CDATA[
+			INSERT INTO tb_board2
+				(title, content, writer_id)
+			VALUE
+				(#{title}, #{content}, #{writerId});
+		]]>
+	</insert>
 
 
 </mapper>
