@@ -40,11 +40,18 @@ public class Board2Controller {
 //		return mav;
 //	}
 	@RequestMapping("/board2ListPage.do")
-	public ModelAndView board2ListPage(){
-		System.out.println("----------------------------");
+	public ModelAndView board2ListPage(
+			@RequestParam(required = false, defaultValue = "1") int page,
+			@RequestParam(required = false, defaultValue = "1") int range){
 		ModelAndView mav = new ModelAndView("board2/board2List.jsp");
 		
-		List<Board2VO> board2List = board2Service.selectBoard2List();
+		int listCnt = board2Service.selectBoard2ListCnt();
+		
+		Pagination pagination = new Pagination();
+		pagination.pageInfo(page, range, listCnt);
+		mav.addObject("pagination", pagination);
+		
+		List<Board2VO> board2List = board2Service.selectBoard2List(pagination);
 		mav.addObject("board2List", board2List);
 		
 		return mav;

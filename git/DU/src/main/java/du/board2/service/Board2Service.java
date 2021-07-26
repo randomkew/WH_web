@@ -6,5 +6,6 @@ import du.board2.domain.Board2VO;
 import du.common.Pagination;
 
 public interface Board2Service {
-	public List<Board2VO> selectBoard2List();
+	public List<Board2VO> selectBoard2List(Pagination pagination);
+	public int selectBoard2ListCnt();
 }

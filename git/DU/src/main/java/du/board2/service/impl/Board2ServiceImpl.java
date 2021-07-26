@@ -28,8 +28,13 @@ public class Board2ServiceImpl implements Board2Service {
 //		return board2DAO.selectBoard2List(map);
 //	}
 	@Override
-	public List<Board2VO> selectBoard2List() {
-		return board2DAO.selectBoard2List();
+	public List<Board2VO> selectBoard2List(Pagination pagination) {
+		return board2DAO.selectBoard2List(pagination);
+	}
+
+	@Override
+	public int selectBoard2ListCnt() {
+		return board2DAO.selectBoard2ListCnt();
 	}
 
 }

@@ -35,7 +35,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${boardList}" var="item" varStatus="status">
+			<c:forEach items="${board2List}" var="item" varStatus="status">
 				<tr ondblclick="trDblClick('${item.idx}');">
 					<td><c:out value="${status.count + pagination.startList}"/></td>
 					<td><c:out value="${item.title}"/></td>

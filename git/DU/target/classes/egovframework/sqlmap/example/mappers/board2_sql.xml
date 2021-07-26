@@ -20,7 +20,15 @@
 			FROM 
 				tb_board2 B INNER JOIN tb_user U ON B.writer_id = U.user_id
 			ORDER BY B.idx DESC
-			
+			LIMIT #{startList}, #{listSize}
+		]]>
+	</select>
+	<select id="selectBoard2ListCnt" parameterType="String" resultType="int">
+		<![CDATA[
+			SELECT
+				COUNT(*)
+			FROM
+				tb_board2
 		]]>
 	</select>
 
