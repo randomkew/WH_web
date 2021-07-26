@@ -148,10 +148,9 @@
 				var path= "${pageContext.request.contextPath }/replyDelete.do"
 				var params= {
 						"idx":idx,
-						"boardIdn":"${board.idx}"
+						"boardIdx":"${board.idx}"
 				};
 				post(path,params);
-				
 			}
 			else{
 				return;

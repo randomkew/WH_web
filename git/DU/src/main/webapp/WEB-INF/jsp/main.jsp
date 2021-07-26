@@ -15,6 +15,6 @@
 	</header>
 		
 		
-	<img src="images/notice-board.png" style="width: 500px; height: 500px;" onclick="window.location.href='boardListPage.do'"/>
+	<img src="images/notice-board.png" style="width: 500px; height: 500px;" onclick="window.location.href='board2ListPage.do'"/>
 </body>
 </html>

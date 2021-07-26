@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/main.css">
 <script type="text/javascript" src="js/bootstrap/bootstrap.bundle.js"></script>
 <meta charset="UTF-8">
-<title>부서 정보</title>
+<title>프로그램 정보</title>
 </head>
 <body>
 	<header>
@@ -25,9 +25,15 @@
 	<tbody>
 		<c:forEach items="${dept}" var="item">
 			<tr>
-				<td><c:out value="${item.deptCd }"/></td>
-				<td><c:out value="${item.deptNm }"/></td>
-				<td><button type="button" onclick="window.location.href='deleteDept.do?deptCd=${item.deptCd}'">삭제</button>
+				<td><c:out value="${item.idx }"/></td>
+				<td><c:out value="${item.prog }"/></td>
+				<td><c:out value="${item.member }"/></td>
+				<td><c:out value="${item.meterials }"/></td>
+				<td><c:out value="${item.location }"/></td>
+				<td><c:out value="${item.maxDepth }"/></td>
+				<td><c:out value="${item.expense }"/></td>
+				<td><c:out value="${item.includeGif }"/></td>
+				<td><button type="button" onclick="window.location.href='deleteDept.do?deptCd=${item.idx}'">삭제</button>
 			</tr>
 		</c:forEach>
 	</tbody>

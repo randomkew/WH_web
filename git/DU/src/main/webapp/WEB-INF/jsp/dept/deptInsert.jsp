@@ -10,12 +10,36 @@
 	<form action="deptInsert.do" method="post">
 		<table>
 			<tr>
-				<th>부서코드</th>
-				<td><input type="text" name="deptCd" required></td>
+				<th>프로그램번호</th>
+				<td><input type="text" name="idx" required></td>
 			</tr>
 			<tr>
-				<th>부서명</th>
-				<td><input type="text" name="deptNm" required></td>
+				<th>프로그램명</th>
+				<td><input type="text" name="prog" required></td>
+			</tr>
+			<tr>
+				<th>인원</th>
+				<td><input type="text" name="member" ></td>
+			</tr>
+			<tr>
+				<th>필수품</th>
+				<td><input type="text" name="meterials"></td>
+			</tr>
+			<tr>
+				<th>교육장소</th>
+				<td><input type="text" name="maxDepth"></td>
+			</tr>
+			<tr>
+				<th>최대수심</th>
+				<td><input type="text" name="location"></td>
+			</tr>
+			<tr>
+				<th>체험비용</th>
+				<td><input type="text" name="expense"></td>
+			</tr>
+			<tr>
+				<th>포함사항</th>
+				<td><input type="text" name="includeGif"></td>
 			</tr>
 		</table>
 		<div>

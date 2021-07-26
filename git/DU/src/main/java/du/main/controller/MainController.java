@@ -19,7 +19,7 @@ public class MainController {
 	private UserService userService;
 	
 	@RequestMapping(value="/login.do", method = RequestMethod.POST)
-	public String mainPage(HttpServletRequest request ,@ModelAttribute UserVO user) {
+	public String mainPage(HttpServletRequest request, @ModelAttribute UserVO user) {
 		
 		if(userService.loginProcess(request, user)){
 			return "main.jsp";

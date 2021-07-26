@@ -15,28 +15,43 @@
 		<img alt="대구대학교 로고" src="${pageContext.request.contextPath }/images/symbol_1.png"
 			onclick="window.location.href='${pageContext.request.contextPath }/mainPage.do'">
 	</div>
-	<ul class="infoUl">
-		<li><a href="deptPage.do">소개</a></li>
-		<li><a href="deptPage.do">스쿠버다이빙</a></li>
-		<li><a href="deptPage.do">공지사항</a></li>
+<!-- 	<div></div> -->
+<!-- 	<ul class="infoUl"> -->
+<!-- 		<li><a href="deptPage.do">소개</a></li> -->
+<!-- 		<li><a href="deptPage.do">스쿠버다이빙</a></li> -->
+<!-- 		<li><a href="deptPage.do">공지사항</a></li> -->
+<!-- 		<li><a href="boardListPage.do">예약하기</a></li> -->
+<!-- 	</ul> -->
+
+   <div class="hd_wrap">
+      <div class="menu_wrap">
+         <a href="/" class="main_logo"><img src="/img/main/logo.png" alt="travies logo">
+         	<h1>Whales <h class="color_idea_D">Dive</h></h1>
+         </a>
+         <nav id="nav">
+            <ul>
+               <li><a href="deptPage.do">소개</a></li>
+ 			<li><a href="deptPage.do">스쿠버다이빙</a></li>
+ 			<li><a href="deptPage.do">공지사항</a></li>
 		<li><a href="boardListPage.do">예약하기</a></li>
-	</ul>
-	<div class="hd_wrap">
+            </ul>
+         </nav>
+      </div>
+   </div>
 	
-	<%if(session.getAttribute("USER") == null) { %>
-	<div class="userInfoDiv">
-		<button type="button" class="btn btn-primary btn-sm" style="right" onclick="window.location.href='signUpPage.do'">회원가입</button>
-		<button type="button" class="btn btn-outline-primary btn-sm" style="right" onclick="window.location.href='loginPage.do'">로그인</button>
-	</div>	
-	<%} else {%>
-	<div class="userInfoDiv">
-		<button type="button" style="background: black;color:white;padding:3px 7px;border-radius: 3px; text-decoration:none; font-size=13px; line-height:35px" onclick="window.location.href='userInfoConfirmPage.do'"><c:out value="${USER.name}"/></button>	
-		<button type="button" class="btn btn-primary btn-sm" style="right" onclick="window.location.href='logout.do'">로그아웃</button>
-		
-	</div>
-	</div>
-	<%} %>
-	
-	
+	<c:choose>
+		<c:when test="${USER.name == null}">
+			<div class="userInfoDiv">
+				<button type="button" class="btn btn-primary btn-sm" style="right" onclick="window.location.href='signUpPage.do'">회원가입</button>
+				<button type="button" class="btn btn-outline-primary btn-sm" style="right" onclick="window.location.href='loginPage.do'">로그인</button>
+			</div>
+		</c:when>
+		<c:otherwise>
+			<div class="userInfoDiv">
+				<button type="button" style="background: black;color:white;padding:3px 7px;border-radius: 3px; text-decoration:none; font-size=13px; line-height:35px" onclick="window.location.href='userInfoConfirmPage.do'"><c:out value="${USER.name}"/></button>	
+				<button type="button" class="btn btn-primary btn-sm" style="right" onclick="window.location.href='logout.do'">로그아웃</button>
+			</div>
+		</c:otherwise>
+	</c:choose>	
 </body>
 </html>
