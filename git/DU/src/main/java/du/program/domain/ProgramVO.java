@@ -1,6 +1,6 @@
-package du.dept.domain;
+package du.program.domain;
 
-public class DeptVO {
+public class ProgramVO {
 	private String idx;
 	private String prog;
 	private long member;

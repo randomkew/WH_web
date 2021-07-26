@@ -23,7 +23,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<c:forEach items="${dept}" var="item">
+		<c:forEach items="${program}" var="item">
 			<tr>
 				<td><c:out value="${item.idx }"/></td>
 				<td><c:out value="${item.prog }"/></td>

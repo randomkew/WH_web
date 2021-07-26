@@ -7,7 +7,7 @@
 <title>부서 등록</title>
 </head>
 <body>
-	<form action="deptInsert.do" method="post">
+	<form action="programInsert.do" method="post">
 		<table>
 			<tr>
 				<th>프로그램번호</th>

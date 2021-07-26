@@ -30,9 +30,9 @@
          </a>
          <nav id="nav">
             <ul>
-               <li><a href="deptPage.do">소개</a></li>
- 			<li><a href="deptPage.do">스쿠버다이빙</a></li>
- 			<li><a href="deptPage.do">공지사항</a></li>
+               <li><a href="ProgramPage.do">소개</a></li>
+ 			<li><a href="programPage.do">스쿠버다이빙</a></li>
+ 			<li><a href="board2ListPage.do">공지사항</a></li>
 		<li><a href="boardListPage.do">예약하기</a></li>
             </ul>
          </nav>
