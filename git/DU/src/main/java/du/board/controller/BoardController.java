@@ -55,8 +55,12 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/boardWritePage.do")
-	public String boardWritePage() {
-		return "board/boardWrite.jsp";
+	public String boardWritePage(HttpSession session) {
+		if(session.getAttribute("USER") != null) {
+			return "board/boardWrite.jsp";
+		}
+		return "main.jsp";
+	
 	}
 	
 	@RequestMapping("/boardWrite.do")

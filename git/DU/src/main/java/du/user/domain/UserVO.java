@@ -11,6 +11,8 @@ public class UserVO {
 	private String phone;
 	
 	private String email;
+	
+	private String auth;
 
 	public String getUserId() {
 		return userId;
@@ -50,6 +52,14 @@ public class UserVO {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getAuth() {
+		return auth;
+	}
+
+	public void setAuth(String auth) {
+		this.auth = auth;
 	}
 
 }

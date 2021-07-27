@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,6 +16,7 @@ import du.board.domain.BoardVO;
 import du.board2.domain.Board2VO;
 import du.board2.service.Board2Service;
 import du.common.Pagination;
+import du.reply.domain.ReplyVO;
 
 @Controller
 public class Board2Controller {
@@ -64,13 +66,27 @@ public class Board2Controller {
 		return mav;
 	}
 	@RequestMapping("/board2WritePage.do")
-	public String board2WritePage() {
+	public String board2WritePage(HttpSession session) {
+		if(session.getAttribute("USER") != null) {
 		return "board2/board2Write.jsp";
+		}
+		return "main.jsp";
 	}
 	@RequestMapping("/board2Write.do")
 	public String board2Write(HttpSession session, @ModelAttribute Board2VO board2) throws Exception {
 		board2Service.insertBoard2(board2, session);
 		
 		return "redirect:/board2ListPage.do";
+	}
+	@RequestMapping("/board2InfoPage/{idx}.do")
+	public ModelAndView board2InfoPage(@PathVariable("idx") long idx) {
+		
+		System.out.println(idx);
+		ModelAndView mav = new ModelAndView("board2/board2Info.jsp");
+		
+		Board2VO board2 = board2Service.selectBoard2(idx);
+		mav.addObject("board2", board2);
+	
+		return mav;
 	}
 }

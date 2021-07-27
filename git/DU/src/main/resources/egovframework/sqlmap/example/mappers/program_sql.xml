@@ -9,7 +9,7 @@
 		<result property="maxDepth"	column="max_depth"/>
 		<result property="location"	column="location"/>
 		<result property="expense"	column="expense"/>
-		<result property="includeGif"	column="included_gif"/>
+		<result property="includedGif"	column="included_gif"/>
 	</resultMap>
 	
 	<select id="selectProgramList" resultMap="ProgramVO">
@@ -24,9 +24,9 @@
 	<insert id="insertProgram" parameterType="programMap">
 		<![CDATA[
 			INSERT INTO tb_program
-				(idx, prog,member,meterials,max_depth,location,expense,included_gif)
+				(prog,member,meterials,max_depth,location,expense,included_gif)
 			VALUES
-				(#{idx}, #{prog},#{member} #{meterials} #{max_depth} #{location} #{expense} #{included_gif})
+				(#{prog},#{member}, #{meterials}, #{maxDepth}, #{location}, #{expense}, #{includedGif})
 		]]>
 	</insert>
 	

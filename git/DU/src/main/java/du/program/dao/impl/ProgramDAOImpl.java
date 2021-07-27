@@ -23,8 +23,8 @@ public class ProgramDAOImpl extends EgovAbstractMapper implements ProgramDAO {
 	}
 
 	@Override
-	public void deleteProgram(String programs) {
-		delete("Program.deleteProgram", programs);
+	public void deleteProgram(String idx) {
+		delete("Program.deleteProgram", idx);
 	}
 
 }

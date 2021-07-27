@@ -20,16 +20,6 @@ public class Board2ServiceImpl implements Board2Service {
 	@Autowired
 	private Board2DAO board2DAO;
 
-//	@Override
-//	public List<Board2VO> selectBoard2List(Pagination pagination, String title) {
-//		HashMap<String, Object> map = new HashMap<>();
-//		
-//		map.put("startList", pagination.getStartList());
-//		map.put("listSize", pagination.getListSize());
-//		map.put("title", title);
-//		
-//		return board2DAO.selectBoard2List(map);
-//	}
 	@Override
 	public List<Board2VO> selectBoard2List(Pagination pagination, String title) {
 		HashMap<String, Object> map = new HashMap<>();
@@ -57,5 +47,11 @@ public class Board2ServiceImpl implements Board2Service {
 	}
 		
 	}
+
+	@Override
+	public Board2VO selectBoard2(long idx) {
+		return board2DAO.selectBoard2(idx);
+	}
+
 
 }

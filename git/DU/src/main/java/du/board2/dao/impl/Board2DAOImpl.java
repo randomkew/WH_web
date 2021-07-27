@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import du.board.domain.BoardVO;
 import du.board2.dao.Board2DAO;
 import du.board2.domain.Board2VO;
 import du.common.Pagination;
@@ -30,6 +31,12 @@ public class Board2DAOImpl extends EgovAbstractMapper implements Board2DAO {
 	@Override
 	public void insertBoard2(Board2VO board2) {
 		insert("Board2.insertBoard2", board2);
+		
+	}
+
+	@Override
+	public Board2VO selectBoard2(long idx) {
+			return selectOne("Board2.selectBoard2", idx);
 		
 	}
 

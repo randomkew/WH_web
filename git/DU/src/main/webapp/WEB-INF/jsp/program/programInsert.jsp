@@ -10,10 +10,6 @@
 	<form action="programInsert.do" method="post">
 		<table>
 			<tr>
-				<th>프로그램번호</th>
-				<td><input type="text" name="idx" required></td>
-			</tr>
-			<tr>
 				<th>프로그램명</th>
 				<td><input type="text" name="prog" required></td>
 			</tr>
@@ -26,11 +22,11 @@
 				<td><input type="text" name="meterials"></td>
 			</tr>
 			<tr>
-				<th>교육장소</th>
+				<th>최대수심</th>
 				<td><input type="text" name="maxDepth"></td>
 			</tr>
 			<tr>
-				<th>최대수심</th>
+				<th>교육장소</th>
 				<td><input type="text" name="location"></td>
 			</tr>
 			<tr>
@@ -39,7 +35,7 @@
 			</tr>
 			<tr>
 				<th>포함사항</th>
-				<td><input type="text" name="includeGif"></td>
+				<td><input type="text" name="includedGif"></td>
 			</tr>
 		</table>
 		<div>

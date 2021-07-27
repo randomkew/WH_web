@@ -65,7 +65,6 @@ public class UserController {
 	
 	@RequestMapping("/userDelete.do")
 	public String userDelete(HttpSession session) {
-//		userService.deleteUser(userId);
 		userService.deleteUser(session);
 		return "redirect:/loginPage.do";
 	}

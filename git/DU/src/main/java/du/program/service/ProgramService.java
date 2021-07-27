@@ -7,5 +7,5 @@ import du.program.domain.ProgramVO;
 public interface ProgramService {
 	public List<ProgramVO> selectProgramList();
 	public void insertProgram(ProgramVO program);
-	public void deleteProgram(String programs);
+	public void deleteProgram(String idx);
 }

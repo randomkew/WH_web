@@ -33,10 +33,10 @@ public class ProgramController {
 		programService.insertProgram(program);
 		return "redirect:/programPage.do";
 	}
-	//이거 밑에DEPT가 아닌 DEPTCD이다 문제 가 없을까 일단 적어놈
+	
 	@RequestMapping("/deleteProgram.do")
-	public String deleteProgram(String programs) {
-		programService.deleteProgram(programs);
+	public String deleteProgram(String idx) {
+		programService.deleteProgram(idx);
 		return "redirect:/programPage.do";
 	}
 }

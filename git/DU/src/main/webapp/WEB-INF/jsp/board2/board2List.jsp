@@ -20,9 +20,12 @@
 				<td><button type="button" id="searchBtn" class="btn btn-primary">검색</button>
 				</td>
 			</tr>
-		</table>
+			
+		</table><c:if test="${USER.auth == 'T'}">
 		<button type="button" class="btn btn-success"
+		
 			onclick="window.location.href='board2WritePage.do'">예약하기</button>
+	</c:if>
 	</div>
 	
 	<table id="dataList" class="table table-stiped table-hover">

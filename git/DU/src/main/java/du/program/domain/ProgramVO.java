@@ -1,18 +1,18 @@
 package du.program.domain;
 
 public class ProgramVO {
-	private String idx;
+	private long idx;
 	private String prog;
 	private long member;
 	private String meterials;
 	private String location;
 	private long maxDepth;
 	private long expense;
-	private long includeGif;
-	public String getIdx() {
+	private String includedGif;
+	public long getIdx() {
 		return idx;
 	}
-	public void setIdx(String idx) {
+	public void setIdx(long idx) {
 		this.idx = idx;
 	}
 	public String getProg() {
@@ -51,11 +51,11 @@ public class ProgramVO {
 	public void setExpense(long expense) {
 		this.expense = expense;
 	}
-	public long getIncludeGif() {
-		return includeGif;
+	public String getIncludedGif() {
+		return includedGif;
 	}
-	public void setIncludeGif(long includeGif) {
-		this.includeGif = includeGif;
+	public void setIncludedGif(String includedGif) {
+		this.includedGif = includedGif;
 	}
 	
 	

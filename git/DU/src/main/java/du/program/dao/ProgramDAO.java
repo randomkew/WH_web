@@ -6,6 +6,6 @@ import du.program.domain.ProgramVO;
 
 public interface ProgramDAO {
 	public List<ProgramVO> selectProgramList();
-	public void insertProgram(ProgramVO dept);
-	public void deleteProgram(String Programs);//이게 아까봤던 deptcd네 programs으로바꿈
+	public void insertProgram(ProgramVO program);
+	public void deleteProgram(String idx);//이게 아까봤던 deptcd네 programs으로바꿈
 }

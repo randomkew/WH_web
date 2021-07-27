@@ -25,15 +25,15 @@
 
    <div class="hd_wrap">
       <div class="menu_wrap">
-         <a href="/" class="main_logo"><img src="/img/main/logo.png" alt="travies logo">
+         <a href="${pageContext.request.contextPath }/mainPage.do" class="main_logo"><img src=""${pageContext.request.contextPath }/images/llll.png" alt="travies logo">
          	<h1>Whales <h class="color_idea_D">Dive</h></h1>
          </a>
          <nav id="nav">
             <ul>
-               <li><a href="ProgramPage.do">소개</a></li>
- 			<li><a href="programPage.do">스쿠버다이빙</a></li>
- 			<li><a href="board2ListPage.do">공지사항</a></li>
-		<li><a href="boardListPage.do">예약하기</a></li>
+               <li><a href="${pageContext.request.contextPath}/programPage.do">소개</a></li>
+ 			<li><a href="${pageContext.request.contextPath}/programPage.do">스쿠버다이빙</a></li>
+ 			<li><a href="${pageContext.request.contextPath}/board2ListPage.do">공지사항</a></li>
+		<li><a href="${pageContext.request.contextPath}/boardListPage.do">예약하기</a></li>
             </ul>
          </nav>
       </div>

@@ -25,8 +25,8 @@ public class ProgramServiceImpl implements ProgramService{
 	}
 
 	@Override
-	public void deleteProgram(String programs) {
-		programDAO.deleteProgram(programs);
+	public void deleteProgram(String idx) {
+		programDAO.deleteProgram(idx);
 	}
 
 }
