@@ -2,8 +2,12 @@
 
 header {
 	display: flex;
-    border-bottom: 1px solid #72c524;
+    border-bottom: 1px solid #ececec;
     margin-bottom: 10px;
+    
+}
+a{
+	text-decoration: none;
 }
 .hd_wrap{
 		width:100%;
@@ -26,15 +30,10 @@ header {
 .logoDiv > img {
 	width: 100%;
 }
-
-.infoUl {
-	margin: auto 0;
-	float:right;
-}
-
 .infoUl > li > a {
 	text-decoration: none;
 	color: black;
+	
 }
 
 #filterDiv {
@@ -62,7 +61,7 @@ header {
     transition-duration:0.3s;
 }
 
-#nav > ul > li:hover > a, #nav > ul > li > a:focus, #nav > ul > li > a.js-openSubMenu { color:#3aafea ; border-bottom:2px solid #3aafea;  transition-duration:0.3s; }
+#nav > ul > li:hover > a, #nav > ul > li > a:focus, #nav > ul > li > a.js-openSubMenu { color:#3aafea ; border-bottom:2px solid #ececec;   transition-duration:0.3s; }
 
 
 /* Second Level Dropdown */

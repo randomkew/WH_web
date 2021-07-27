@@ -40,6 +40,12 @@ public class Board2DAOImpl extends EgovAbstractMapper implements Board2DAO {
 		
 	}
 
+	@Override
+	public void deleteBoard2(long idx) {
+		delete("Board2.deleteBoard2", idx);
+		
+	}
+
 	
 
 }

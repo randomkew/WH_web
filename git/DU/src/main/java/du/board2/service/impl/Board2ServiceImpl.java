@@ -53,5 +53,11 @@ public class Board2ServiceImpl implements Board2Service {
 		return board2DAO.selectBoard2(idx);
 	}
 
+	@Override
+	public void deleteBoard2(long idx) {
+		board2DAO.deleteBoard2(idx);
+		
+	}
+
 
 }

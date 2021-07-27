@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -89,4 +90,11 @@ public class Board2Controller {
 	
 		return mav;
 	}
+	@RequestMapping("/board2Delete.do")
+	public String board2Delete(long idx) {
+		board2Service.deleteBoard2(idx);
+		
+		return "redirect:/board2ListPage.do";
+	}
+	
 }

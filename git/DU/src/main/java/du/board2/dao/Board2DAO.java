@@ -12,4 +12,5 @@ public interface Board2DAO {
 	public int selectBoard2ListCnt(String title);
 	public Board2VO selectBoard2(long idx);
 	public void insertBoard2(Board2VO board2);
+	public void deleteBoard2(long idx);
 }

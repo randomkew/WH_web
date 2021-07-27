@@ -61,6 +61,13 @@
 				(#{title}, #{content}, #{writerId});
 		]]>
 	</insert>
+	<delete id="deleteBoard2" parameterType="long">
+		<![CDATA[
+			DELETE FROM tb_board2 
+			WHERE
+				idx = #{idx}
+		]]>
+	</delete>
 
 
 </mapper>
