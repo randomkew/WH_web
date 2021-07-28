@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="Board2">
-	<resultMap type="board2Map" id="Board2VO">
+<mapper namespace="Notice">
+	<resultMap type="noticeMap" id="NoticeVO">
 		<id property="idx" 				column="idx"/>
 		<result property="title" 		column="title"/>
 		<result property="content" 		column="content"/>
@@ -13,12 +13,12 @@
 		<result	property="attFilename"	column="att_filename" />-->
 	</resultMap>
 	
-	<select id="selectBoard2List" parameterType="hashmap" resultMap="Board2VO">
+	<select id="selectNoticeList" parameterType="hashmap" resultMap="NoticeVO">
 		<![CDATA[
 			SELECT 
 				B.*, U.name AS writer_name
 			FROM 
-				tb_board2 B INNER JOIN tb_user U ON B.writer_id = U.user_id
+				tb_notice B INNER JOIN tb_user U ON B.writer_id = U.user_id
 		]]>
 			<where>
 				<if test="title != ''">
@@ -30,12 +30,12 @@
 			LIMIT #{startList}, #{listSize}
 		]]>
 	</select>
-	<select id="selectBoard2ListCnt" parameterType="String" resultType="int">
+	<select id="selectNoticeListCnt" parameterType="String" resultType="int">
 		<![CDATA[
 			SELECT
 				COUNT(*)
 			FROM
-				tb_board2
+				tb_notice
 		]]>
 		<where>
 			<if test="value != ''">
@@ -43,27 +43,27 @@
 			</if>
 		</where>
 	</select>
-	<select id="selectBoard2" parameterType="long" resultMap="Board2VO">
+	<select id="selectNotice" parameterType="long" resultMap="NoticeVO">
 		<![CDATA[
 			SELECT 
 				B.*, U.name AS writer_name
 			FROM 
-				tb_board2 B INNER JOIN tb_user U ON B.writer_id = U.user_id
+				tb_notice B INNER JOIN tb_user U ON B.writer_id = U.user_id
 			WHERE 
 				B.idx = #{idx}
 		]]>
 	</select>
-	<insert id="insertBoard2" parameterType="board2Map">
+	<insert id="insertNotice" parameterType="noticeMap">
 		<![CDATA[
-			INSERT INTO tb_board2
+			INSERT INTO tb_notice
 				(title, content, writer_id)
 			VALUE
 				(#{title}, #{content}, #{writerId});
 		]]>
 	</insert>
-	<delete id="deleteBoard2" parameterType="long">
+	<delete id="deleteNotice" parameterType="long">
 		<![CDATA[
-			DELETE FROM tb_board2 
+			DELETE FROM tb_notice
 			WHERE
 				idx = #{idx}
 		]]>

@@ -43,16 +43,16 @@
 	   <div class="container">
       <form class="form-signin" action="login.do" method="post">
         <h2 class="form-signin-heading">Login</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
         <input class="form-control" id="user_id" name="userId" placeholder="Email address" required autofocus>
         <input type="password" id="user_pw" name="pwd" class="form-control" placeholder="Password" required>
         
         
         
         <button class="btn btn-lg btn-primary btn-block" style="padding: .5rem 7.3rem;" type="submit">Sign in</button>
-        <br>
-        <button type="reset">reset</button>
-        <button type="button" onclick="window.location.href='signUpPage.do'">회원가입</button>
+        
+        
+        <hr>
+        <button class="btn btn-success" style="padding: .5rem 7.5	rem;" type="button" onclick="window.location.href='signUpPage.do'">Sign up</button>
       </form>
 		</div>
 		

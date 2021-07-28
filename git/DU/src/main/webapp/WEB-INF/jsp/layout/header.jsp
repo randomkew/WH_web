@@ -36,7 +36,7 @@
 					<c:otherwise>
 						<div class="userInfoDiv">
 							<button type="button"
-								style="background: black; color: white; padding: 3px 3px;"
+								style="background: black;" class="btn btn-primary btn-sm "
 								onclick="window.location.href='userInfoConfirmPage.do'">
 								<c:out value="${USER.name}" />
 							</button>
@@ -51,7 +51,7 @@
 		<div class="row">
 		<div class="col">
 
-			<a href="${pageContext.request.contextPath }/mainPage.do" class="main_logo"> <img src="${pageContext.request.contextPath }/images/llll.png" alt="travies logo" style="width:40px; margin-top:10px; height:auto; float:left;"><h1>Whales Dive</h1> </a>
+			<a href="${pageContext.request.contextPath }/mainPage.do" class="main_logo"> <img src="${pageContext.request.contextPath }/images/logo.jpg" alt="logo" style="width:40px; margin-top:10px; height:auto; float:left;"><h1>Whales Dive</h1> </a>
 		</div>
 		<div class="col">
 			<nav id="nav">
@@ -59,7 +59,7 @@
 				<li><a href="${pageContext.request.contextPath}/programPage.do">소개</a></li>
 				<li><a href="${pageContext.request.contextPath}/programPage.do">스쿠버다이빙</a></li>
 				<li><a
-					href="${pageContext.request.contextPath}/board2ListPage.do">공지사항</a></li>
+					href="${pageContext.request.contextPath}/noticeListPage.do">공지사항</a></li>
 				<li><a
 					href="${pageContext.request.contextPath}/boardListPage.do">예약하기</a></li>
 			</ul>
