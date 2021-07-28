@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Board2">
+	<resultMap type="board2Map" id="Board2VO">
+		<id property="idx" 				column="idx"/>
+		<result property="title" 		column="title"/>
+		<result property="content" 		column="content"/>
+		<result property="writerId" 	column="writer_id"/>
+		<result property="writerName" 	column="writer_name"/>
+		<result property="registDate" 	column="regist_date"/>
+		<result property="modifyDate" 	column="modify_date"/>
+		<!--  <result	property="attIdx"		column="att_idx" />
+		<result	property="attFilename"	column="att_filename" />-->
+	</resultMap>
+	
+	<select id="selectBoard2List" parameterType="hashmap" resultMap="Board2VO">
+		<![CDATA[
+			SELECT 
+				B.*, U.name AS writer_name
+			FROM 
+				tb_board2 B INNER JOIN tb_user U ON B.writer_id = U.user_id
+		]]>
+			<where>
+				<if test="title != ''">
+					B.title LIKE CONCAT('%', #{title}, '%')
+				</if>
+			</where>
+		<![CDATA[
+			ORDER BY B.idx DESC
+			LIMIT #{startList}, #{listSize}
+		]]>
+	</select>
+	<select id="selectBoard2ListCnt" parameterType="String" resultType="int">
+		<![CDATA[
+			SELECT
+				COUNT(*)
+			FROM
+				tb_board2
+		]]>
+		<where>
+			<if test="value != ''">
+				title LIKE CONCAT('%', #{title}, '%')
+			</if>
+		</where>
+	</select>
+	<select id="selectBoard2" parameterType="long" resultMap="Board2VO">
+		<![CDATA[
+			SELECT 
+				B.*, U.name AS writer_name
+			FROM 
+				tb_board2 B INNER JOIN tb_user U ON B.writer_id = U.user_id
+			WHERE 
+				B.idx = #{idx}
+		]]>
+	</select>
+	<insert id="insertBoard2" parameterType="board2Map">
+		<![CDATA[
+			INSERT INTO tb_board2
+				(title, content, writer_id)
+			VALUE
+				(#{title}, #{content}, #{writerId});
+		]]>
+	</insert>
+	<delete id="deleteBoard2" parameterType="long">
+		<![CDATA[
+			DELETE FROM tb_board2 
+			WHERE
+				idx = #{idx}
+		]]>
+	</delete>
+
+
+</mapper>

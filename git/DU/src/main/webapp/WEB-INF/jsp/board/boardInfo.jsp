@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>  
 <!DOCTYPE html>
 <html>
 	<head>
@@ -47,6 +48,46 @@
 			<input type="hidden" name="boardIdx" value="${board.idx }" />
 			<input type="hidden" name="idx" value="${board.attIdx }" />		
 		</form>
+		
+		<div id="replyDiv" style="margin-top: 10px">
+			<form action="${pageContext.request.contextPath}/replyWrite.do" method="post">
+				<table class="table table-light" style="width:50%">
+					<tr>
+						<th style="width:10%;">댓글</th>
+						<td>
+							<input type="text" name="content" style="width:90%"/>
+							<button type="submit" class="btn btn-success">등록</button>
+						</td>
+					</tr>
+					<c:forEach items="${replyList}" var="item" varStatus="status">
+				<tr>
+					<th style="width:10%;"><c:out value="${item.writerName}"/></th>
+					<td data-idx="${item.idx}"><span><c:out value="${item.content}"/></span>
+					
+				<button type="button" style="float: right; margin-left:5px;"
+				class="btn btn-primary replyModifyBtn">수정</button>
+				<button type="button" style="float:right;" class="btn btn-secondary" 
+				onclick="deleteReply('${item.idx}')">삭제</button>
+						<fmt:parseDate value="${item.registDate}" pattern="yyyy-MM-dd'T'HH:mm:ss" var="date"/>
+						<br>
+						(<fmt:formatDate value="${date}" pattern="yyyy-MM-dd HH:mm:ss"/>)
+					</td> 
+				</tr>
+					</c:forEach>
+					
+					
+				</table>
+				<input type="hidden" name="boardIdx" value="${board.idx}">
+			</form>
+		</div>
+		<form id="hiddenForm" style="display:none;"
+			action="${pageContext.request.contextPath}/replyModify.do" method="post">
+			<input type="text" name="content" style="width: 80%; margin-right:6px;"/>
+			<input type="hidden" name="idx"/>
+			<input type="hidden" name="boardIdx" value="${board.idx}"/>
+			<button type="submit" class="btn btn-primary">확인</button>
+			
+		</form>
 	</body>
 
 	<script>
@@ -79,7 +120,15 @@
 				
 				post(path, params);
 			}
-		}
+		
+		var replyModifyBtns= document.querySelectorAll(".replyModifyBtn");
+		replyModifyBtns.forEach(el=> el.addEventListener('click', event=> {
+			var td=el.parentNode;
+			
+			var content = td.getElementsByTagName('span')[0].innerHTML;
+			td.innerHTML='';
+			td.append(makeReplyUpdateForm(td.getAttribute('data-idx'),content));
+		}));
 		
 		function clickDeleteBtn(idx, attIdx){
 			if(confirm("삭제하시겠습니까?") == true){
@@ -93,6 +142,35 @@
 				return;
 			}
 		}
+		}
+		function deleteReply(idx) {
+			if(confirm("댓글을 삭제하시겠습니까?") ==true) {
+				var path= "${pageContext.request.contextPath }/replyDelete.do"
+				var params= {
+						"idx":idx,
+						"boardIdx":"${board.idx}"
+				};
+				post(path,params);
+			}
+			else{
+				return;
+			}
+		}
+		
+		function makeReplyUpdateForm(idx,content) {
+			
+			var form=document.getElementById('hiddenForm').cloneNode(true);
+			form.style.display='';
+			
+			var contentInput=form.getElementsByTagName("input")[0];
+			contentInput.value=content;
+			
+			var idxInput=form.getElementsByTagName("input")[1]
+			idxInput.value=idx;
+			
+			return form;
+		}
+		
 		
 		function post(path, params) {
 			
@@ -121,5 +199,8 @@
 				document.forms["fileDownload"].submit();
 			}
 		}
+	
+		
+		
 	</script>
 </html>

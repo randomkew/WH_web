@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Program">
+	<resultMap type="programMap" id="ProgramVO">
+		<id property="idx"		column="idx"/>
+		<result property="prog"	column="prog"/>
+		<result property="member"	column="member"/>
+		<result property="meterials"	column="meterials"/>
+		<result property="maxDepth"	column="max_depth"/>
+		<result property="location"	column="location"/>
+		<result property="expense"	column="expense"/>
+		<result property="includedGif"	column="included_gif"/>
+	</resultMap>
+	
+	<select id="selectProgramList" resultMap="ProgramVO">
+		<![CDATA[
+			SELECT
+				idx, prog,member,meterials,max_depth,location,expense,included_gif
+			FROM
+				tb_program 	
+		]]>
+	</select>
+	
+	<insert id="insertProgram" parameterType="programMap">
+		<![CDATA[
+			INSERT INTO tb_program
+				(prog,member,meterials,max_depth,location,expense,included_gif)
+			VALUES
+				(#{prog},#{member}, #{meterials}, #{maxDepth}, #{location}, #{expense}, #{includedGif})
+		]]>
+	</insert>
+	
+	<delete id="deleteProgram" parameterType="String">
+		<![CDATA[
+			DELETE FROM tb_program
+			WHERE
+				idx = #{idx}
+			
+		]]>
+	</delete>
+</mapper>

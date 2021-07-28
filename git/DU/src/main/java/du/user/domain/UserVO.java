@@ -8,15 +8,11 @@ public class UserVO {
 	
 	private String name;
 	
-	private String deptCd;
-	
-	private String deptNm;
-	
-	private String job;
-	
 	private String phone;
 	
 	private String email;
+	
+	private String auth;
 
 	public String getUserId() {
 		return userId;
@@ -42,30 +38,6 @@ public class UserVO {
 		this.name = name;
 	}
 
-	public String getDeptCd() {
-		return deptCd;
-	}
-
-	public void setDeptCd(String deptCd) {
-		this.deptCd = deptCd;
-	}
-
-	public String getDeptNm() {
-		return deptNm;
-	}
-
-	public void setDeptNm(String deptNm) {
-		this.deptNm = deptNm;
-	}
-
-	public String getJob() {
-		return job;
-	}
-
-	public void setJob(String job) {
-		this.job = job;
-	}
-
 	public String getPhone() {
 		return phone;
 	}
@@ -80,6 +52,14 @@ public class UserVO {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getAuth() {
+		return auth;
+	}
+
+	public void setAuth(String auth) {
+		this.auth = auth;
 	}
 
 }

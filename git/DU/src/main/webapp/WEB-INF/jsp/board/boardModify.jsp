@@ -33,7 +33,7 @@
 			
 			<tr>
 				<th rowspan="3">첨부파일</th>
-				<td>${board.attFilename }</td>
+				<td colspan="3">${board.attFilename }</td>
 			</tr>
 			<tr>
 				<td>
@@ -46,7 +46,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td>
+				<td colspan="4">
 					<input type="file" name="attFile" />
 				</td>
 			</tr>

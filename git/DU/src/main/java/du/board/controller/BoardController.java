@@ -21,12 +21,23 @@ import du.board.domain.BoardVO;
 import du.board.service.BoardService;
 import du.common.DownloadView;
 import du.common.Pagination;
+import du.program.domain.ProgramVO;
+import du.program.service.ProgramService;
+import du.reply.domain.ReplyVO;
+import du.reply.service.ReplyService;
 
 @Controller
 public class BoardController {
 
 	@Autowired
 	private BoardService boardService;
+	
+	@Autowired
+	private ReplyService replyService;
+	
+
+	@Autowired
+	private ProgramService programService;
 	
 	@RequestMapping("/boardListPage.do")
 	public ModelAndView boardListPage(
@@ -50,8 +61,15 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/boardWritePage.do")
-	public String boardWritePage() {
-		return "board/boardWrite.jsp";
+	public String boardWritePage(HttpSession session, Model model) {
+		
+		List<ProgramVO> program = programService.selectProgramList();
+		if(session.getAttribute("USER") != null) {
+			model.addAttribute("program" , program);
+			return "board/boardWrite.jsp";
+		}
+		return "main.jsp";
+	
 	}
 	
 	@RequestMapping("/boardWrite.do")
@@ -66,8 +84,11 @@ public class BoardController {
 		ModelAndView mav = new ModelAndView("board/boardInfo.jsp");
 		
 		BoardVO board = boardService.selectBoard(idx);
-		
 		mav.addObject("board", board);
+		
+		
+		List<ReplyVO> replyList = replyService.selectReplyList(idx);
+		mav.addObject("replyList",replyList);
 		return mav;
 	}
 	
