@@ -4,8 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/bootstrap/bootstrap.css">
+
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/bootstrap/bootstrap.min.css">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/main.css">
 <script type="text/javascript"
@@ -30,7 +36,7 @@
 					<c:otherwise>
 						<div class="userInfoDiv">
 							<button type="button"
-								style="background: black; color: white; padding: 3px 3px;
+								style="background: black; color: white; padding: 3px 3px;"
 								onclick="window.location.href='userInfoConfirmPage.do'">
 								<c:out value="${USER.name}" />
 							</button>
@@ -45,7 +51,7 @@
 		<div class="row">
 		<div class="col">
 
-			<a href="${pageContext.request.contextPath }/mainPage.do" class="main_logo"> <img src="${pageContext.request.contextPath }/images/llll.png" alt="travies logo" style="width:40px; margin-top:10px; height:auto; float:left;"><h1>Whales <h class="color_idea_D">Dive</h></h1> </a>
+			<a href="${pageContext.request.contextPath }/mainPage.do" class="main_logo"> <img src="${pageContext.request.contextPath }/images/llll.png" alt="travies logo" style="width:40px; margin-top:10px; height:auto; float:left;"><h1>Whales Dive</h1> </a>
 		</div>
 		<div class="col">
 			<nav id="nav">
