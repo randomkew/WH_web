@@ -56,7 +56,7 @@
 		<div class="col">
 			<nav id="nav">
 			<ul>
-				<li><a href="${pageContext.request.contextPath}/programPage.do">소개</a></li>
+				<li><a href="${pageContext.request.contextPath}/introduce.do">소개</a></li>
 				<li><a href="${pageContext.request.contextPath}/programPage.do">스쿠버다이빙</a></li>
 				<li><a
 					href="${pageContext.request.contextPath}/noticeListPage.do">공지사항</a></li>
