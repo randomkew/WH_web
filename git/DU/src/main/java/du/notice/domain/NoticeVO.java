@@ -1,8 +1,8 @@
-package du.board2.domain;
+package du.notice.domain;
 
 import java.time.LocalDateTime;
 
-public class Board2VO {
+public class NoticeVO {
 private long idx;
 	
 	private String title;

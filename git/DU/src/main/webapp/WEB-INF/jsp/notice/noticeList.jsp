@@ -24,7 +24,7 @@
 		</table><c:if test="${USER.auth == 'T'}">
 		<button type="button" class="btn btn-success"
 		
-			onclick="window.location.href='board2WritePage.do'">예약하기</button>
+			onclick="window.location.href='noticeWritePage.do'">예약하기</button>
 	</c:if>
 	</div>
 	
@@ -38,7 +38,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${board2List}" var="item" varStatus="status">
+			<c:forEach items="${noticeList}" var="item" varStatus="status">
 				<tr ondblclick="trDblClick('${item.idx}');">
 					<td><c:out value="${status.count + pagination.startList}"/></td>
 					<td><c:out value="${item.title}"/></td>
@@ -92,7 +92,7 @@
 // 					item.style.display = "none";
 // 				}
 // 			}
-			var url = "board2ListPage.do";
+			var url = "noticeListPage.do";
 			url = url + "?title=" + searchTitle.value;
 			
 			location.href = url;
@@ -104,7 +104,7 @@
 		var page = ((range - 2) * rangeSize) +1;
 		var range = range - 1;
 		
-		var url = "board2ListPage.do";
+		var url = "noticeListPage.do";
 		url = url + "?page=" + page;
 		url = url + "&range=" + range;
 		url = url + "&title=" + searchTitle.value;
@@ -114,7 +114,7 @@
 	
 	//페이지 번호 클릭 이벤트
 	function fn_pagination(page, range, rangeSize){
-		var url = "board2ListPage.do";
+		var url = "noticeListPage.do";
 		url = url + "?page=" + page;
 		url = url + "&range=" + range;
 		url = url + "&title=" + searchTitle.value;
@@ -127,7 +127,7 @@
 		var page = parseInt((range * rangeSize)) + 1;
 		var range = parseInt(range) + 1;
 		
-		var url = "board2ListPage.do";
+		var url = "noticeListPage.do";
 		url = url + "?page=" + page;
 		url = url + "&range=" + range;
 		url = url + "&title=" + searchTitle.value;
@@ -135,7 +135,7 @@
 		location.href = url;
 	}
 	function trDblClick(idx){
-		var url = "board2InfoPage/"+idx+".do"
+		var url = "noticeInfoPage/"+idx+".do"
 		
 		location.href = url;
 	}

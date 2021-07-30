@@ -16,40 +16,18 @@
 
 
 <div class="container">
-
 <form class="form-signin" action="signUp.do" method="post" id="signUpForm">
-	<h2 class="form-signin-heading">회원가입</h2>
-	<table>
-	
-		<tr>
-			<th class="sr-only">이름</th>
-			<td><input type="text" name="name" required class="form-control"></td>
-		</tr>
-		<tr>
-			<th class="sr-only">아이디</th>
-			<td><input type="text" name="userId" required class="form-control"></td>
-		</tr>
-		<tr>
-			<th class="sr-only">비밀번호</th>
-			<td><input class="form-control" type="password" name="pwd" id="pwdInput" required></td>
-		</tr>
-		<tr>
-			<th class="sr-only">비밀번호 확인</th>
-			<td><input class="form-control" type="password" id="pwdCheckInput" required></td>
-		</tr>
-		<tr>
-			<th class="sr-only">연락처</th>
-			<td><input type="text" name="phone" class="form-control"></td>
-		</tr>
-		<tr>
-			<th class="sr-only">이메일</th>
-			<td><input type="text" name="email" class="form-control"></td>
-		</tr>
-	</table>
+	<h2 class="form-signin-heading">Sign up</h2>
+        <input class="form-control" type="text" name="name" placeholder="name" required>
+        <input class="form-control" type="text" name="userId" placeholder="user_id" required>
+        <input class="form-control" type="password" name="pwd" id="pwdInput" placeholder="passwd" required>
+        <input class="form-control" type="password" id="pwdCheckInput" placeholder="passwd_check" required>
+        <input class="form-control" type="text" name="phone" placeholder="phone">
+        <input class="form-control" type="text" name="email" placeholder="email">	
 	<div>
-		<button type="button" id="okBtn">등록</button>
-		<button type="reset">초기화</button>
-		<button type="button" id="backBtn">이전</button>
+	<hr>
+		<button  class="btn btn-lg btn-primary btn-block" style="padding: .5rem 7.8rem;" type="button" id="okBtn">등록</button>
+		
 	</div>
 </form>
 </div>

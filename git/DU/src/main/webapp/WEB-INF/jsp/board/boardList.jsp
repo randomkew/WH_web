@@ -12,7 +12,7 @@
 	</header>
 	
 	<div id="filterDiv">
-		<table>
+		<table style="margin:auto">
 			<tr>
 				<th>제목</th>
 				<td><input type="text" id="searchTitle"
@@ -25,9 +25,9 @@
 			onclick="window.location.href='boardWritePage.do'">예약하기</button>
 	</div>
 	
-	<table id="dataList" class="table table-stiped table-hover">
+	<table id="dataList" style="width:50%; margin:auto;" class="table table-bordered">
 		<thead>
-			<tr>
+			<tr style="background:blue; color:white;">
 				<th>번호</th>
 				<th>제목</th>
 				<th>작성자</th>
@@ -47,7 +47,7 @@
 	</table>
 	
 	<div id="paginationBox">
-		<ul class="pagination">
+		<ul class="pagination" style="padding-left:700px;">
 			<c:if test="${pagination.prev}">
 				<li class="page-item"><a class="page-link" href="#" onClick="fn_prev('${pagination.page}', '${pagination.range}', '${pagination.rangeSize}')">Previous</a></li>
 			</c:if>
